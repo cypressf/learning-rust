@@ -1,5 +1,5 @@
 fn main() {
-	// a mutable variable
+    // a mutable variable
     let mut x = 5;
     println!("The value of x is: {}", x);
     x = 6;
