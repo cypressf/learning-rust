@@ -1,0 +1,21 @@
+{
+  "name": "@cypressf/webassembly",
+  "collaborators": [
+    "Cypress Frankenfeld <iamcypress@gmail.com>"
+  ],
+  "description": "A sample project with wasm-pack",
+  "version": "0.1.0",
+  "license": "MIT/Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cypressf/learning-rust"
+  },
+  "files": [
+    "webassembly_bg.wasm",
+    "webassembly.js",
+    "webassembly.d.ts"
+  ],
+  "module": "webassembly.js",
+  "types": "webassembly.d.ts",
+  "sideEffects": "false"
+}
