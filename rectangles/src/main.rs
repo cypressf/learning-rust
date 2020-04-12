@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32
@@ -15,7 +16,7 @@ fn main() {
     );
 
     // we still have ownership of rectangle
-    println!("{}", rectangle.height);
+    println!("{:?}", rectangle);
 }
 
 fn area(rectangle: &Rectangle) -> u32 {
