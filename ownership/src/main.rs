@@ -16,6 +16,10 @@ fn main() {
     println!("{}", my_name_mutable);
 
     multiple_mut_references();
+
+    let sentence = "This is a sentence.";
+    let first_word = slice_first_word(&sentence);
+    println!("{}", first_word);
 }
 
 fn take_and_give_back(a_string: String) -> String {
@@ -38,4 +42,19 @@ fn multiple_mut_references() {
     } // r1 goes out of scope here, so we can make a new reference with no problems.
 
     let _r2 = &mut s;
+}
+
+fn slice_first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            // returning a string slice helps us avoid returning an index
+            // pointing to part of a string that may be modified to no
+            // longer be that length
+            return &s[..i];
+        }
+    }
+
+    &s[..]
 }
