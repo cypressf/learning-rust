@@ -1,6 +1,4 @@
+mod client;
 mod network {
-    fn connect() {}
-    mod client {
-        fn connect() {}
-    }
+    mod server;
 }
