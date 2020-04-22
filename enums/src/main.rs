@@ -31,7 +31,19 @@ fn main() {
             Game::BoardGame(board_game) => println!(
                 "Board Game: {}, Players: {}, Playtime: {}",
             board_game.name, board_game.players, board_game.playtime),
-            Game::ComputerGame {name, platform, size} => print!("name: {}, platform: {}, size: {}", name, platform, size)
+            Game::ComputerGame {name, platform, size} => println!("name: {}, platform: {}, size: {}", name, platform, size)
+        }
+    }
+    // You do not need to use the fully-defined Option::Some and Option::None
+    // because they're used so frequently
+    let cypress = Some(String::from("Cypress"));
+    let none: Option<String> = None;
+    let strings = [cypress, none];
+
+    for string in strings.iter() {
+        match string {
+            Some(string) => println!("{}", string),
+            None => println!("Nothing")
         }
     }
 }
