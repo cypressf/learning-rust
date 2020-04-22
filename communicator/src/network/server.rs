@@ -1,3 +1,3 @@
-mod server {
-    fn connect() {}
+pub mod server {
+    pub fn connect() {}
 }
