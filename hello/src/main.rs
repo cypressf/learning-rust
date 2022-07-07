@@ -3,6 +3,8 @@ use std::{
     io::Read,
     io::Write,
     net::{TcpListener, TcpStream},
+    thread,
+    time::Duration,
 };
 
 fn main() {
@@ -18,11 +20,16 @@ fn handle_connection(mut stream: TcpStream) {
     let mut buffer = [0; 512];
 
     let root = b"GET / ";
+    let sleep = b"GET /sleep ";
     stream.read(&mut buffer).unwrap();
 
-    let (response_code, file) = match buffer.starts_with(root) {
-        true => ("200 OK", "hello.html"),
-        false => ("404 NOT FOUND", "404.html"),
+    let (response_code, file) = if buffer.starts_with(root) {
+        ("200 OK", "hello.html")
+    } else if buffer.starts_with(sleep) {
+        thread::sleep(Duration::from_secs(5));
+        ("200 OK", "hello.html")
+    } else {
+        ("404 NOT FOUND", "404.html")
     };
     let mut file = File::open(file).unwrap();
     let mut file_string = String::new();
