@@ -18,7 +18,7 @@ mod outer {
 
 fn try_calling() {
     outer::middle(); // success
-    outer::middle_private(); // failure
+                     // outer::middle_private(); failure
     outer::inner::inner(); // success
-    outer::inner::inner_private(); // failure
+                           // outer::inner::inner_private(); failure
 }
