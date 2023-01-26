@@ -1,5 +1,5 @@
 {
-  "name": "@cypressf/webassembly",
+  "name": "webassembly",
   "collaborators": [
     "Cypress Frankenfeld <iamcypress@gmail.com>"
   ],
@@ -17,5 +17,5 @@
   ],
   "module": "webassembly.js",
   "types": "webassembly.d.ts",
-  "sideEffects": "false"
+  "sideEffects": false
 }
