@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WebAssembly Example</title>
+  </head>
+  <body>
+    <script type="module">
+      import init, { greet } from "./pkg/webassembly.js";
+      init().then(() => {
+        greet("WebAssembly");
+      });
+    </script>
+  </body>
+</html>
